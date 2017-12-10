@@ -1,6 +1,6 @@
 {
   "name": "md-free-angular-cli",
-  "version": "1.4.2",
+  "version": "1.6.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -38,7 +38,8 @@
     "zone.js": "0.8.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.4.2",
+    "@angular-devkit/schematics": "0.0.40",
+    "@angular/cli": "^1.6.0",
     "@angular/compiler-cli": "4.4.4",
     "@types/bootstrap": "3.3.32",
     "@types/chartist": "0.9.34",
@@ -57,6 +58,6 @@
     "protractor": "5.1.0",
     "ts-node": "2.0.0",
     "tslint": "4.5.0",
-    "typescript": "2.4.2"
+    "typescript": "^2.3.4"
   }
 }
