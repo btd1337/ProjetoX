@@ -4,11 +4,11 @@ import { EquipamentoService } from 'app/services/equipamento.service';
 import { Equipamento } from 'app/model/equipamento';
 
 @Component({
-  selector: 'app-user-profile',
-  templateUrl: './user-profile.component.html',
-  styleUrls: ['./user-profile.component.css']
+  selector: 'app-reporte',
+  templateUrl: './reporte.component.html',
+  styleUrls: ['./reporte.component.css']
 })
-export class UserProfileComponent implements OnInit {
+export class ReporteComponent implements OnInit {
 
   private equipamentos: Equipamento[];
   

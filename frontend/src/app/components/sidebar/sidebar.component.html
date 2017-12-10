@@ -1,5 +1,5 @@
 <div class="logo">
-    <a href="https://github.com/btd1337/ProjetoX/" class="simple-text">
+    <a routerLink="/dashboard" class="simple-text">
         <div class="logo-img">
             <img src="/assets/img/logo.png"/>
         </div>
@@ -19,11 +19,17 @@
 
     <ul class="nav nav-mobile-menu" *ngIf="isMobileMenu()">
         <li>
-            <a href="#pablo" class="dropdown-toggle" data-toggle="dropdown">
+            <a routerLink="/dashboard" class="dropdown-toggle" data-toggle="dropdown">
                 <i class="material-icons">dashboard</i>
                 <p class="hidden-lg hidden-md">Dashboard</p>
             </a>
         </li>
+        <li>
+            <a routerLink="/reporte" class="dropdown-toggle" data-toggle="dropdown">
+                    <i class="material-icons">assignment_late</i>
+                    <p class="hidden-lg hidden-md">Reportar</p>
+                </a>
+            </li>
     </ul>
 
     <div class="nav-container">
