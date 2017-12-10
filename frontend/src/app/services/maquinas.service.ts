@@ -1,4 +1,4 @@
-import { Maquinas } from './../model/maquinas';
+import { Maquina } from './../model/maquina';
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
@@ -14,7 +14,7 @@ export class MaquinasService {
 	constructor(private http: Http) {
 	}
 	
-	getMaquinas(): Observable<Maquinas[]> {
+	getMaquinas(): Observable<Maquina[]> {
 		return this.http.get(this.apiUrl)
 		.map(res => res.json());
 	}
