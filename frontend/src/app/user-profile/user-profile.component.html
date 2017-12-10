@@ -3,6 +3,11 @@
     <div class="row">
         <div class="col-md-8">
             <div class="card">
+                <select class="form-control" ng-model="expiryMonth" required>
+                <option>Selecione uma máquina</option>
+                <option ng-repeat="equipamento in equipamentos">{{equipamento.Nome}}</option>
+                </select>
+           
                 <div class="card-header" data-background-color="red">
                     <h4 class="title">Edit Profile</h4>
                     <p class="category">Complete your profile</p>
