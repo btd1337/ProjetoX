@@ -28,4 +28,9 @@ export class ReporteComponent implements OnInit {
 
   }
 
+  confirmar() {
+    console.log("confirmar");
+    confirm("Confirma envio?");
+  }
+
 }
