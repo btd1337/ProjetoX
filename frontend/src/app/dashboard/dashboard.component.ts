@@ -1,8 +1,10 @@
+import { Maquina } from './../model/maquina';
 import { Observable } from 'rxjs/Observable';
-import { Equipamento } from './../model/Equipamento';
+import { Equipamento } from './../model/equipamento';
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
 import { EquipamentoService } from 'app/services/equipamento.service';
+import { MaquinasService } from 'app/services/maquinas.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -11,18 +13,28 @@ import { EquipamentoService } from 'app/services/equipamento.service';
 })
 export class DashboardComponent implements OnInit {
 
-  private listaEquipamentos: Equipamento[];
+  private equipamentos: Equipamento[];
+  private maquinas: Maquina[];
 
-  constructor(private equipamentoService: EquipamentoService) {
+  constructor(
+    private equipamentoService: EquipamentoService,
+    private maquinaService: MaquinasService) {
    }
 
-   getEquipamentos(): void {
+  getEquipamentos(): void {
     this.equipamentoService.getEquipamentos()
       .subscribe(
-      listaEquipamentos => this.listaEquipamentos = listaEquipamentos
-      ,
+      equipamentos => this.equipamentos = equipamentos,
       error => {});
   }
+
+  getMaquinas(): void {
+    this.maquinaService.getMaquinas()
+      .subscribe(
+      maquinas => this.maquinas = maquinas,
+      error => {});
+  }
+
   startAnimationForLineChart(chart) {
       let seq: any, delays: any, durations: any;
       seq = 0;
@@ -83,6 +95,7 @@ export class DashboardComponent implements OnInit {
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
 
       this.getEquipamentos();
+      this.getMaquinas();
 
       const dataDailySalesChart: any = {
           labels: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],

@@ -1,8 +1,6 @@
-import { Equipamento } from './Equipamento';
-
 export class Evento {
     id: number;
-    equipamento: Equipamento;
+    IdEquipamento: number;
     dataEvento: Date;
 	pecasBoas: number;
 	pecasRuins: number;

@@ -1,3 +1,4 @@
+import { MaquinasService } from './services/maquinas.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -41,7 +42,8 @@ RouterModule,
     AppRoutingModule
   ],
   providers: [
-    EquipamentoService
+    EquipamentoService,
+    MaquinasService
   ],
   bootstrap: [AppComponent]
 })
