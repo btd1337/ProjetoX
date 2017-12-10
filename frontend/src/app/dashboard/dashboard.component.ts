@@ -1,5 +1,7 @@
+import { Equipamento } from './../model/Equipamento';
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
+import { EquipamentoService } from 'app/services/equipamento.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -8,7 +10,18 @@ import * as Chartist from 'chartist';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+  listaEquipamentos: any;
+
+  constructor(private equipamentoService: EquipamentoService) {
+    this.getEquipamentos();
+   }
+
+   getEquipamentos(): void {
+    this.equipamentoService.getEquipamentos()
+        .subscribe(
+            resultArray => this.listaEquipamentos = resultArray
+        );
+  }
   startAnimationForLineChart(chart){
       let seq: any, delays: any, durations: any;
       seq = 0;

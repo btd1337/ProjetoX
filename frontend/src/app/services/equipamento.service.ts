@@ -1,6 +1,8 @@
+import { Equipamento } from './../model/Equipamento';
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
 
 @Injectable()
 export class EquipamentoService {
@@ -9,15 +11,14 @@ export class EquipamentoService {
 
 	private apiUrl = 'https://sebrae.gear.host/home/equipamento/';
 
-	constructor(private _http: Http) {
+	constructor(private http: Http) {
 	}
 	
-	private findAll() {
-		return this._http.get(this.apiUrl)
-					.map((res: Response) => res.json())
-					 .subscribe(data => {
-							this.data = data;
-							console.log(this.data);
-					});
+	getEquipamentos(): Observable<Equipamento[]> {
+		return this.http
+			.get(this.apiUrl)
+			.map((response: Response) => {
+				return <Equipamento[]>response.json();
+			});
 	}
 }

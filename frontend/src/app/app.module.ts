@@ -17,6 +17,7 @@ import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
 import { UpgradeComponent } from './upgrade/upgrade.component';
+import { EquipamentoService } from 'app/services/equipamento.service';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,9 @@ import { UpgradeComponent } from './upgrade/upgrade.component';
 RouterModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [
+    EquipamentoService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
