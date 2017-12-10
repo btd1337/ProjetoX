@@ -9,7 +9,7 @@ export class EquipamentoService {
 
 	data: any = null;
 
-	private apiUrl = 'https://sebrae.gear.host/home/equipamento/';
+	private apiUrl = 'https://sebrae2.gear.host/home/equipamento/';
 
 	constructor(private http: Http) {
 	}

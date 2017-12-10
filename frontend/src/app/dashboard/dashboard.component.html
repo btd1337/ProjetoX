@@ -4,7 +4,8 @@
             <div class="row">
                 <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let maquina of maquinas">
                     <div class="card card-stats" >
-                        <div class="card-header" data-background-color="green">
+                        <div class="card-header" 
+                            [ngStyle]="{'background-color': defineCor(maquina.Cor), 'color': 'white'}">
                             <i class="material-icons">developer_board</i>
                         </div>
                         <div class="card-content">
@@ -13,7 +14,7 @@
                         </div>
                         <div class="card-footer">
                             <div class="stats">
-                                <i class="material-icons">update</i>37 minutos atrás
+                                <i class="material-icons">{{defineBadge(maquina.Info)}}</i>{{getMessage(maquina.Info)}}
                             </div>
                         </div>
                     </div>

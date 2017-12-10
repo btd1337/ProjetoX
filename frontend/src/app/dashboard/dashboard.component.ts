@@ -1,3 +1,4 @@
+import { NgStyle } from '@angular/common';
 import { Maquina } from './../model/maquina';
 import { Observable } from 'rxjs/Observable';
 import { Equipamento } from './../model/equipamento';
@@ -33,6 +34,55 @@ export class DashboardComponent implements OnInit {
       .subscribe(
       maquinas => this.maquinas = maquinas,
       error => {});
+  }
+
+  defineCor(cor: string): string {
+    if (cor === 'green') {
+      return '#4aa74f';
+    } else if (cor === 'orange') {
+      return '#fc8f04';
+    } else if (cor === 'red') {
+      return '#f54336';
+    } else {
+      return '#1E88E5';
+    }
+  }
+
+  defineBadge(info: string): string {
+
+    if (info === '') {
+      return 'assignment_turned_in';
+    }else if (info === 'Manutenção') {
+      return 'av_timer';
+    } else if (info === 'Parada') {
+      return 'warning';
+    } else if (info === 'Mensagem Recebida') {
+      return 'announcement';
+    } else {
+      return 'autorenew';
+    }
+  }
+
+  getMessage(info: string): string {
+    if (info === '') {
+      return '';
+    }else if (info === 'Manutenção') {
+      const tempo = this.getTempoAleatorio();
+      return ' Em manutenção há ' + tempo + ' min';
+    } else if (info === 'Parada') {
+      const tempo = this.getTempoAleatorio();
+      return ' EQUIPAMENTO PARADO HÁ ' + tempo + ' min';
+    } else if (info === 'Mensagem Recebida') {
+      return ' Mensagem Recebida';
+    } else {
+      return ' ';
+    }
+  }
+
+  getTempoAleatorio() {
+    const max = 120;
+    const min = 1;
+    return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 
   startAnimationForLineChart(chart) {

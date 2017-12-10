@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { EquipamentoService } from 'app/services/equipamento.service';
-import { Equipamento } from 'app/model/Equipamento';
+import { Equipamento } from 'app/model/equipamento';
 
 @Component({
   selector: 'app-user-profile',

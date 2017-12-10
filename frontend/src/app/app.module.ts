@@ -17,7 +17,6 @@ import { TypographyComponent } from './typography/typography.component';
 import { IconsComponent } from './icons/icons.component';
 import { MapsComponent } from './maps/maps.component';
 import { NotificationsComponent } from './notifications/notifications.component';
-import { UpgradeComponent } from './upgrade/upgrade.component';
 import { EquipamentoService } from 'app/services/equipamento.service';
 
 @NgModule({
@@ -30,7 +29,6 @@ import { EquipamentoService } from 'app/services/equipamento.service';
     IconsComponent,
     MapsComponent,
     NotificationsComponent,
-    UpgradeComponent,
 
   ],
   imports: [
