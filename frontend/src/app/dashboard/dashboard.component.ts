@@ -48,17 +48,17 @@ export class DashboardComponent implements OnInit {
     }
   }
 
-  defineBadge(info: string): string {
+  defineBadge(info: string, taxa: number): string {
 
-    if (info === '') {
-      return 'assignment_turned_in';
-    }else if (info === 'Manutenção') {
+    if (info === 'Manutenção') {
       return 'av_timer';
-    } else if (info === 'Parada') {
+    } else if (info === 'Parada' || (taxa > 15)) {
       return 'warning';
     } else if (info === 'Mensagem Recebida') {
       return 'announcement';
-    } else {
+    } else if (info === '') {
+      return 'assignment_turned_in';
+    }else {
       return 'autorenew';
     }
   }
@@ -67,11 +67,11 @@ export class DashboardComponent implements OnInit {
     if (info === '') {
       return '';
     }else if (info === 'Manutenção') {
-      const tempo = this.getTempoAleatorio();
-      return ' Em manutenção há ' + tempo + ' min';
+      //const tempo = this.getTempoAleatorio();
+      return ' Em manutenção há 3h';
     } else if (info === 'Parada') {
-      const tempo = this.getTempoAleatorio();
-      return ' EQUIPAMENTO PARADO HÁ ' + tempo + ' min';
+      //const tempo = this.getTempoAleatorio();
+      return ' PARADO HÁ 47 min';
     } else if (info === 'Mensagem Recebida') {
       return ' Mensagem Recebida';
     } else {

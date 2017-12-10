@@ -10,11 +10,11 @@
                         </div>
                         <div class="card-content">
                             <p class="category">{{maquina.Nome}}</p>
-                            <h3 class="title">{{maquina.PecasBoas}}/{{maquina.PecasRuins}} <small>{{maquina.Taxa}}%</small></h3>
+                            <h3 class="title">{{maquina.PecasBoas}}/{{maquina.PecasRuins}}</h3><small>{{maquina.Taxa}}%</small>
                         </div>
                         <div class="card-footer">
                             <div class="stats">
-                                <i class="material-icons">{{defineBadge(maquina.Info)}}</i>{{getMessage(maquina.Info)}}
+                                <i class="material-icons">{{defineBadge(maquina.Info, maquina.Taxa)}}</i>{{getMessage(maquina.Info)}}
                             </div>
                         </div>
                     </div>
