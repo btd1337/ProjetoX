@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Observable';
 import { Equipamento } from './../model/Equipamento';
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
@@ -10,19 +11,19 @@ import { EquipamentoService } from 'app/services/equipamento.service';
 })
 export class DashboardComponent implements OnInit {
 
-  listaEquipamentos: any;
+  private listaEquipamentos: Equipamento[];
 
   constructor(private equipamentoService: EquipamentoService) {
-    this.getEquipamentos();
    }
 
    getEquipamentos(): void {
     this.equipamentoService.getEquipamentos()
-        .subscribe(
-            resultArray => this.listaEquipamentos = resultArray
-        );
+      .subscribe(
+      listaEquipamentos => this.listaEquipamentos = listaEquipamentos
+      ,
+      error => {});
   }
-  startAnimationForLineChart(chart){
+  startAnimationForLineChart(chart) {
       let seq: any, delays: any, durations: any;
       seq = 0;
       delays = 80;
@@ -80,6 +81,8 @@ export class DashboardComponent implements OnInit {
   };
   ngOnInit() {
       /* ----------==========     Daily Sales Chart initialization For Documentation    ==========---------- */
+
+      this.getEquipamentos();
 
       const dataDailySalesChart: any = {
           labels: ['D', 'S', 'T', 'Q', 'Q', 'S', 'S'],

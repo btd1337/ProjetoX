@@ -15,10 +15,7 @@ export class EquipamentoService {
 	}
 	
 	getEquipamentos(): Observable<Equipamento[]> {
-		return this.http
-			.get(this.apiUrl)
-			.map((response: Response) => {
-				return <Equipamento[]>response.json();
-			});
+		return this.http.get(this.apiUrl)
+		.map(res => res.json());
 	}
 }

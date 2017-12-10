@@ -1,0 +1,7 @@
+
+Status:
+Verde- Ok produzindo
+Amarelo - produzindo em limiar de atenção
+Vermelho - Parada | Produção crítica | Necessita manutenção
+Azul - Manutenção
+Cinza - Desligada
