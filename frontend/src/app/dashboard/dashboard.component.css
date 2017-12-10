@@ -2,3 +2,9 @@ h3 {
 	font-size: 1.5em;
 	font-weight: 400;
 }
+
+.update {
+	color: grey;
+	font-size: 0.8em;
+	text-align: right;
+}

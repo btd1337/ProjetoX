@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class AlarmeService {
 
-	private apiUrl = 'https://sebrae.gear.host/home/alarme/';
+	private apiUrl = 'https://sebrae3.gear.host/home/alarme/';
 	
 	constructor() { }
 
